@@ -78,9 +78,7 @@ export default function Home() {
           </div>
           <Card className="w-full min-w-[350px]">
             <CardHeader>
-              <CardTitle className="text-center">
-                日全蝕 Solar Eclipse
-              </CardTitle>
+              <CardTitle className="text-center">獵心 Seductor</CardTitle>
               <CardDescription className="text-center">
                 White Frequency
               </CardDescription>
