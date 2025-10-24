@@ -1,65 +1,137 @@
 import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { PlayIcon } from "@phosphor-icons/react/dist/ssr";
+import { Separator } from "@/components/ui/separator";
+
+import Link from "next/link";
 
 export default function Home() {
+  const MusicList = [
+    {
+      name: "Spotify",
+      imgSrc: "https://services.linkfire.com/logo_spotify_onlight.svg",
+      musicLink:
+        "https://open.spotify.com/album/3b0WhPepXHm3K1YT40cN1y?si=Bi-djGF-RKydYv4Btk8X7Q",
+    },
+    {
+      name: "Apple Music",
+      imgSrc: "https://services.linkfire.com/logo_applemusic_onlight.svg",
+      musicLink:
+        "https://music.apple.com/tw/album/%E6%97%A5%E5%85%A8%E8%9D%95-ep/1847322570",
+    },
+    {
+      name: "KKBox",
+      imgSrc: "https://www.kkbox.com/about/img/logo/logo.svg",
+      musicLink: "https://kkbox.fm/KaJzRh",
+    },
+    {
+      name: "YouTube Music",
+      imgSrc:
+        "https://upload.wikimedia.org/wikipedia/commons/0/04/YouTube_Music_logo.svg",
+      musicLink:
+        "https://music.youtube.com/playlist?list=OLAK5uy_lONO9pGj2MsU-8W8sBvZZ_-aCY8vOAk40&si=VBjAjH9-q4ErGXuD",
+    },
+    {
+      name: "StreetVoice",
+      imgSrc:
+        "https://streetvoice.com/pages/mobile-app/static/images/logo-sv-b-s.svg",
+      musicLink:
+        "https://streetvoice.com/whitefrequency2016/songs/album/97324127/",
+    },
+    {
+      name: "Line Music",
+      imgSrc: "https://cdn.worldvectorlogo.com/logos/line-music.svg",
+      musicLink: "https://music-tw.line.me/album/7787184",
+    },
+    {
+      name: "WangYiYun",
+      imgSrc: "https://services.linkfire.com/logo_netease_onlight.svg",
+      musicLink: "https://music.163.com/#/album?id=287789645",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div
+      className="bg-black/40 w-full flex justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url(/albumCover.jpg)" }}
+    >
+      <div className=" relative w-full  flex flex-col items-center min-h-screen gap-8 p-8 bg-cover bg-center bg-no-repeat">
+        {/* 灰色濾鏡覆蓋層 */}
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-md"></div>
+
+        {/* 內容區域 */}
+        <div className="relative z-10 flex flex-col items-center gap-4">
+          <div className="border  overflow-hidden flex items-center justify-center">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/albumCover.jpg"
+              alt="Seductor"
+              width={150}
+              height={150}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <Card className="w-full min-w-[350px]">
+            <CardHeader>
+              <CardTitle className="text-center">
+                日全蝕 Solar Eclipse
+              </CardTitle>
+              <CardDescription className="text-center">
+                White Frequency
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent>
+              {MusicList.map((musicItem, index) => (
+                <div key={musicItem.name + index}>
+                  <div className="flex gap-2 items-center w-full justify-between">
+                    <div className="relative h-10 w-auto min-w-[125px]">
+                      <Image
+                        src={musicItem.imgSrc}
+                        alt={musicItem.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <Link
+                      href={musicItem.musicLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" className="cursor-pointer">
+                        <PlayIcon size={32} weight="fill" />
+                      </Button>
+                    </Link>
+                  </div>
+                  {index < MusicList.length - 1 && (
+                    <Separator className="my-4" />
+                  )}
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+          <div className="w-full space-y-4 flex flex-col items-center">
+            <div className="relative w-full flex items-center justify-center">
+              <Image
+                src="/LOGO.png"
+                alt="logoImg"
+                width={120}
+                height={120}
+                className="object-cover object-center"
+                style={{ objectPosition: "center center" }}
+              />
+            </div>
+            <p className="text-gray-50 text-sm">
+              © 2025 White Frequency. All rights reserved.
+            </p>
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
